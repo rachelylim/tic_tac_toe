@@ -17,6 +17,10 @@ body{
   position: fixed;
 }
 
+.overlay:hover{
+  cursor: pointer;
+}
+
 #alert{
   border-radius: 10px;
   padding-top: 20px;
