@@ -34,6 +34,7 @@ var checkWinner = function(playerPositions){
 
   for(var i = 0; i < winningCombos.length; i++){
     // console.log(winningCombos[i].map(Number));
+
     if (player.includes((winningCombos[i].map(Number)))){
       won = true;
     };
@@ -41,13 +42,10 @@ var checkWinner = function(playerPositions){
   return won;
 };
 
-<<<<<<< HEAD
 var clearBoard = function() {
   $("td").empty();
 }
 
-=======
->>>>>>> master
 $( document ).ready(function() {
 
   $("td").click(function(){
@@ -58,10 +56,8 @@ $( document ).ready(function() {
       turn = false;
       if (checkWinner(playerO.positions)){
         alert("Player O has won!");
-<<<<<<< HEAD
+
         clearBoard();
-=======
->>>>>>> master
       };
     } else if (turn === false) {
       var id = $(this).attr("id");
@@ -70,10 +66,8 @@ $( document ).ready(function() {
       turn = true; 
       if (checkWinner(playerX.positions)){
         alert("Player X has won!");
-<<<<<<< HEAD
+
         clearBoard();
-=======
->>>>>>> master
       };
     };
   });
