@@ -1,0 +1,23 @@
+h2{
+  text-align: center;
+  padding-top: 10px;
+}
+
+table{
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 600px;
+  height: 600px;
+  text-align: center;
+  border: black solid 5px;
+  background: black;
+}
+
+
+
+td{
+  background: white;
+  width: 190px;
+  height: 190px;
+  margin: 5px;
+}
