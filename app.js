@@ -5,6 +5,7 @@ var playerO= {
     $(spot).html('<img src="red.png" alt="O" />');
   },
   positions: [],
+  nickname: "Pink Flower"
 };
 
 var playerX = { 
@@ -12,6 +13,7 @@ var playerX = {
     $(spot).html('<img src="green.png" alt="X" />');
   },
   positions: [],
+  nickname: "Green Flower"
 };
 
 var checkWinner = function(playerPositions){
@@ -42,24 +44,25 @@ var declareWinner = function(player) {
   $("#alert").show();
 }
 
+var fullPlay = function(clickedSpot, player) {
+  var id = $(clickedSpot).attr("id");
+  player.play(clickedSpot);
+  player.positions.push(id);
+  if(checkWinner(player.positions)){
+    declareWinner(player.nickname)
+  };
+}
+
 $( document ).ready(function() {
   $("td").click(function(){
+    var _this = this;
+
     if (turn === true) {
-      var id = $(this).attr("id"); 
-      playerO.play(this);
-      playerO.positions.push(id);
       turn = false;
-      if (checkWinner(playerO.positions)){
-        declareWinner("Pink Flower");
-      };
+      fullPlay(_this, playerO);
     } else {
-      var id = $(this).attr("id");
-      playerX.play(this);
-      playerX.positions.push(id);
-      turn = true; 
-      if (checkWinner(playerX.positions)){
-        declareWinner("Green Flower");
-      };
+      turn = true;
+      fullPlay(_this, playerX);
     };
   });
 
