@@ -8,9 +8,13 @@
 // if player O just played, player X is playing 
 
  
-var turn = true; 
 
-var playerO = { 
+
+$( document ).ready(function() {
+
+  var turn = true; 
+
+var playerO= { 
   play: function(spot){ 
     $(spot).html("O");
   },
@@ -28,12 +32,12 @@ var checkWinner = function(playerPositions){
   var player = playerPositions.sort().toString(); 
   // debugger;
 
-  var winningCombos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7], [1, 4, 7], [2, 5, 8], [3, 6, 9]];
+  winningCombos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7], [1, 4, 7], [2, 5, 8], [3, 6, 9]];
 
   var won = false;
-
   for(var i = 0; i < winningCombos.length; i++){
     // console.log(winningCombos[i].map(Number));
+
     if (player.includes((winningCombos[i].map(Number)))){
       won = true;
     };
@@ -41,14 +45,11 @@ var checkWinner = function(playerPositions){
   return won;
 };
 
-<<<<<<< HEAD
 var clearBoard = function() {
   $("td").empty();
+  playerO.positions = []
+  playerX.positions = []
 }
-
-=======
->>>>>>> master
-$( document ).ready(function() {
 
   $("td").click(function(){
     if (turn === true) {
@@ -56,12 +57,12 @@ $( document ).ready(function() {
       playerO.play(this);
       playerO.positions.push(id);
       turn = false;
+      // debugger
       if (checkWinner(playerO.positions)){
+        console.log(playerO.positions);
         alert("Player O has won!");
-<<<<<<< HEAD
+
         clearBoard();
-=======
->>>>>>> master
       };
     } else if (turn === false) {
       var id = $(this).attr("id");
@@ -70,10 +71,8 @@ $( document ).ready(function() {
       turn = true; 
       if (checkWinner(playerX.positions)){
         alert("Player X has won!");
-<<<<<<< HEAD
+
         clearBoard();
-=======
->>>>>>> master
       };
     };
   });
