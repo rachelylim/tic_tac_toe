@@ -1,21 +1,64 @@
-h2{
+@font-face {
+  font-family: "pennellino";
+  src: url("pennellino.ttf");
+}
+
+body{
+  margin:0; 
+  padding:0;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.8;
+  display: none;
+  position: fixed;
+}
+
+#alert{
+  border-radius: 10px;
+  padding-top: 20px;
+  font-size: 100px;
+  font-family: "pennellino";
+  font-size: 100px;
   text-align: center;
-  padding-top: 10px;
+  color: #00cc88;
+  display:none;
+  position:fixed;
+  width:600px;
+  height:150px;
+  background-color:white;
+  margin-left:-300px;
+  margin-top: 200px;
+  left:50%;
+}
+
+h2{
+  margin: 0px;
+  font-family: "pennellino";
+  font-size: 100px;
+  color: #00cc88;
+  text-align: center;
+}
+
+img{
+  width: 140px;
 }
 
 table{
+  background: url("http://static1.squarespace.com/static/53b4d49de4b00894c69c7a0c/t/53f55bdde4b0a95765d3ec7f/1408588765988/Mint+Watercolor+Wallpaper_Pixejoo.jpg");
   margin: 0 auto;
-  margin-top: 50px;
   width: 600px;
   height: 600px;
   text-align: center;
-  border: black solid 5px;
-  background: black;
+  border: #99ffdd solid 5px;
+  background: #99ffdd;
 }
 
 td{
   background: white;
   width: 190px;
   height: 190px;
-  margin: 5px;
 }
