@@ -53,14 +53,20 @@ var fullPlay = function(clickedSpot, player) {
   };
 }
 
+var isEmpty = function(element) {
+  return !$.trim(element.html());
+}
+
 $( document ).ready(function() {
   $("td").click(function(){
     var _this = this;
 
-    if (turn === true) {
+    // debugger
+
+    if (turn === true && isEmpty($(this))) {
       turn = false;
       fullPlay(_this, playerO);
-    } else {
+    } else if (turn === false && isEmpty($(this))) {
       turn = true;
       fullPlay(_this, playerX);
     };
